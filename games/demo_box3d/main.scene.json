@@ -1,0 +1,247 @@
+{
+  "world": {
+    "defs": "demo_box3d",
+    "loader": {
+      "assets": {
+        "demo_box3d": { "type": "json", "url": "/games/demo_box3d/assets/demo_box3d.json", "preload": true }
+      }
+    },
+    "shipped": { "plugins": ["bodies"] },
+    "ui": {
+      "panels": {
+        "readings": { "anchor": "top-left", "at": [0, 0], "size": [1280, 720], "layer": 0 }
+      },
+      "keys": { "up": "ArrowUp", "down": "ArrowDown", "left": "ArrowLeft", "right": "ArrowRight", "press": ["Enter"], "back": "Escape" },
+      "styles": {
+        "reading": { "fontFamily": "monospace", "fontSize": 13, "fill": 15658734, "align": "center", "stroke": { "color": 0, "width": 3, "join": "round" } }
+      }
+    },
+    "box3d": {
+      "gravity": [0, -9.8, 0],
+      "subStepCount": 4,
+      "contactHertz": 30,
+      "contactDampingRatio": 10,
+      "contactSpeed": 3,
+      "restitutionThreshold": 1,
+      "hitEventThreshold": 1,
+      "maximumLinearSpeed": 400,
+      "enableSleep": true,
+      "enableContinuous": true,
+      "enableWarmStarting": true,
+      "enableSpeculative": true,
+      "contactRecycleDistance": 0.02,
+      "static": [
+        { "pos": [0, -0.5, 0], "rot": [0, 0, 0, 1], "shapes": [{ "box": [20, 0.5, 20], "baseMaterial": { "friction": 0.7, "restitution": 0 } }] },
+        { "pos": [0, 0.5, 20.25], "rot": [0, 0, 0, 1], "shapes": [{ "box": [20.5, 0.5, 0.25], "baseMaterial": { "friction": 0.7 } }] },
+        { "pos": [0, 0.5, -20.25], "rot": [0, 0, 0, 1], "shapes": [{ "box": [20.5, 0.5, 0.25], "baseMaterial": { "friction": 0.7 } }] },
+        { "pos": [20.25, 0.5, 0], "rot": [0, 0, 0, 1], "shapes": [{ "box": [0.25, 0.5, 20], "baseMaterial": { "friction": 0.7 } }] },
+        { "pos": [-20.25, 0.5, 0], "rot": [0, 0, 0, 1], "shapes": [{ "box": [0.25, 0.5, 20], "baseMaterial": { "friction": 0.7 } }] },
+        { "pos": [12, 1.2, 12], "rot": [0, 0, 0, 1], "shapes": [{ "box": [0.15, 1.2, 0.15] }] },
+        { "pos": [16, 2.5, 0], "rot": [0, 0, 0, 1], "shapes": [{ "box": [0.15, 2.5, 0.15] }] },
+        { "pos": [14.6, 4.85, 0], "rot": [0, 0, 0, 1], "shapes": [{ "box": [1.55, 0.15, 0.15] }] },
+        { "pos": [-14, 0.6, -2], "rot": [0, 0, 0, 1], "shapes": [{ "box": [0.3, 0.6, 0.3] }] },
+        { "pos": [-16, 1.5, -10], "rot": [0, 0, 0, 1], "shapes": [{ "box": [0.2, 1.5, 0.2] }] },
+        { "pos": [8, 1.135, 6], "rot": [-0.12467473, 0, 0, 0.99219767], "shapes": [{ "box": [1.5, 0.15, 4], "baseMaterial": { "friction": 0.6, "restitution": 0 } }] },
+        { "pos": [-12, 2.4, 10], "rot": [0, 0, 0, 1], "shapes": [{ "box": [2, 0.12, 2], "oneWay": [0, 1, 0], "baseMaterial": { "friction": 0.6, "restitution": 0 } }] }
+      ],
+      "kinds": {
+        "pad": { "type": "static", "shapes": [{ "box": [1.5, 0.05, 1.5], "isSensor": true, "enableSensorEvents": true }] },
+        "box": { "type": "dynamic", "linearDamping": 0, "angularDamping": 0.05, "shapes": [{ "box": [0.4, 0.4, 0.4], "density": 500, "baseMaterial": { "friction": 0.6, "restitution": 0.1 }, "enableSensorEvents": true }] },
+        "sphere": { "type": "dynamic", "linearDamping": 0, "angularDamping": 0.05, "shapes": [{ "sphere": { "center": [0, 0, 0], "radius": 0.45 }, "density": 500, "baseMaterial": { "friction": 0.6, "restitution": 0.3, "rollingResistance": 0.02 }, "enableSensorEvents": true }] },
+        "capsule": { "type": "dynamic", "linearDamping": 0, "angularDamping": 0.05, "shapes": [{ "capsule": { "center1": [-0.4, 0, 0], "center2": [0.4, 0, 0], "radius": 0.3 }, "density": 500, "baseMaterial": { "friction": 0.6, "restitution": 0.2, "rollingResistance": 0.02 }, "enableSensorEvents": true }] },
+        "hull": { "type": "dynamic", "linearDamping": 0, "angularDamping": 0.05, "shapes": [{ "hull": { "points": [0.5, 0, 0, 0.25, 0, 0.433, -0.25, 0, 0.433, -0.5, 0, 0, -0.25, 0, -0.433, 0.25, 0, -0.433, 0.26, 0.25, 0.15, 0, 0.25, 0.3, -0.26, 0.25, 0.15, -0.26, 0.25, -0.15, 0, 0.25, -0.3, 0.26, 0.25, -0.15, 0.2, -0.3, 0, 0.1, -0.3, 0.173, -0.1, -0.3, 0.173, -0.2, -0.3, 0, -0.1, -0.3, -0.173, 0.1, -0.3, -0.173] }, "density": 500, "baseMaterial": { "friction": 0.6, "restitution": 0.1 }, "enableSensorEvents": true }] },
+        "cylinder": { "type": "dynamic", "linearDamping": 0, "angularDamping": 0.05, "shapes": [{ "cylinder": { "height": 0.9, "radius": 0.4, "yOffset": -0.45, "sides": 24 }, "density": 500, "baseMaterial": { "friction": 0.6, "restitution": 0.1 }, "enableSensorEvents": true }] },
+        "cone": { "type": "dynamic", "linearDamping": 0, "angularDamping": 0.05, "shapes": [{ "cone": { "height": 1, "radius1": 0.5, "radius2": 0.05, "slices": 24 }, "density": 500, "baseMaterial": { "friction": 0.6, "restitution": 0.1 }, "enableSensorEvents": true }] },
+        "rock": { "type": "dynamic", "linearDamping": 0, "angularDamping": 0.3, "shapes": [{ "rock": { "radius": 0.5 }, "density": 2500, "baseMaterial": { "friction": 0.8, "restitution": 0.05, "rollingResistance": 0.1 }, "enableSensorEvents": true }] },
+        "crate": { "type": "dynamic", "linearDamping": 0, "angularDamping": 0.05, "shapes": [{ "box": [0.4, 0.4, 0.4], "density": 300, "baseMaterial": { "friction": 0.6, "restitution": 0.1 }, "enableSensorEvents": true }] },
+        "barrel": { "type": "dynamic", "linearDamping": 0, "angularDamping": 0.05, "shapes": [{ "cylinder": { "height": 1, "radius": 0.35, "yOffset": -0.5, "sides": 24 }, "density": 400, "baseMaterial": { "friction": 0.5, "restitution": 0.15, "rollingResistance": 0.02 }, "enableSensorEvents": true }] },
+        "ball": { "type": "dynamic", "linearDamping": 0, "angularDamping": 0.05, "shapes": [{ "sphere": { "center": [0, 0, 0], "radius": 0.35 }, "density": 800, "baseMaterial": { "friction": 0.5, "restitution": 0.6, "rollingResistance": 0.01 }, "enableSensorEvents": true }] },
+        "block": { "type": "dynamic", "linearDamping": 0, "angularDamping": 0.05, "shapes": [{ "box": [0.9, 0.2, 0.3], "density": 500, "baseMaterial": { "friction": 0.7, "restitution": 0.05 }, "enableSensorEvents": true }] },
+        "door": { "type": "dynamic", "linearDamping": 0, "angularDamping": 0.1, "shapes": [{ "box": [0.7, 1.1, 0.06], "density": 600, "baseMaterial": { "friction": 0.6, "restitution": 0.1 }, "enableSensorEvents": true }] },
+        "bob": { "type": "dynamic", "linearDamping": 0, "angularDamping": 0.05, "shapes": [{ "sphere": { "center": [0, 0, 0], "radius": 0.35 }, "density": 4000, "baseMaterial": { "friction": 0.5, "restitution": 0.2 }, "enableSensorEvents": true }] },
+        "plank": { "type": "dynamic", "linearDamping": 0, "angularDamping": 0.1, "shapes": [{ "box": [1.6, 0.08, 0.35], "density": 500, "baseMaterial": { "friction": 0.7, "restitution": 0.05 }, "enableSensorEvents": true }] },
+        "link": { "type": "dynamic", "linearDamping": 0, "angularDamping": 0.1, "shapes": [{ "box": [0.4, 0.08, 0.08], "density": 2000, "baseMaterial": { "friction": 0.5, "restitution": 0.1 }, "enableSensorEvents": true }] },
+        "shot": { "type": "dynamic", "linearDamping": 0, "angularDamping": 0.05, "isBullet": true, "shapes": [{ "sphere": { "center": [0, 0, 0], "radius": 0.2 }, "density": 1500, "baseMaterial": { "friction": 0.4, "restitution": 0.4, "rollingResistance": 0.02 }, "enableSensorEvents": true }] }
+      },
+      "joints": {
+        "hinge": {
+          "type": "revolute",
+          "localFrameA": { "pos": [0.16, -0.05, 0], "rot": [-0.70710678, 0, 0, 0.70710678] },
+          "localFrameB": { "pos": [-0.71, 0, 0], "rot": [-0.70710678, 0, 0, 0.70710678] },
+          "enableLimit": true, "lowerAngle": -1.7, "upperAngle": 1.7,
+          "enableSpring": true, "hertz": 1.2, "dampingRatio": 0.4, "targetAngle": 0,
+          "enableMotor": false, "motorSpeed": 0, "maxMotorTorque": 0
+        },
+        "rope": {
+          "type": "distance",
+          "localFrameA": { "pos": [-1.3, -0.15, 0], "rot": [0, 0, 0, 1] },
+          "localFrameB": { "pos": [0, 0, 0], "rot": [0, 0, 0, 1] },
+          "length": 3,
+          "enableSpring": false, "hertz": 2, "dampingRatio": 0.2,
+          "enableLimit": false, "minLength": 2, "maxLength": 4
+        },
+        "spring": {
+          "type": "wheel",
+          "localFrameA": { "pos": [0, 0.95, 0], "rot": [0, 0, 0.70710678, 0.70710678] },
+          "localFrameB": { "pos": [0, 0, 0], "rot": [0, 0, 0.70710678, 0.70710678] },
+          "enableSuspensionSpring": true, "suspensionHertz": 2.5, "suspensionDampingRatio": 0.25,
+          "enableSuspensionLimit": true, "lowerSuspensionLimit": -0.3, "upperSuspensionLimit": 0.3,
+          "enableSpinMotor": false, "spinSpeed": 0, "maxSpinTorque": 0
+        },
+        "weld": {
+          "type": "weld",
+          "localFrameA": { "pos": [0.41, 0, 0], "rot": [0, 0, 0, 1] },
+          "localFrameB": { "pos": [-0.41, 0, 0], "rot": [0, 0, 0, 1] },
+          "linearHertz": 0, "angularHertz": 40, "linearDampingRatio": 1, "angularDampingRatio": 0.7,
+          "torqueThreshold": 6000
+        }
+      }
+    }
+  },
+  "plugins": ["loader", "scenemanager", "player", "box3d", "shipped", "environment3d", "render3d", "chasecamera3d", "ui", "stats"],
+  "seats": 1,
+  "prefabs": {
+    "engine": { "dt": 0.016666666666666666, "width": 1280, "height": 720 },
+    "scenemanager": { "out": {} },
+    "loader": {},
+    "render3d": {
+      "camera": { "fov": 60, "near": 0.1, "far": 300, "at": [0, 4, -17], "look": [0, 1, 0] },
+      "pixelRatio": 1,
+      "tone": "neutral",
+      "exposure": 1,
+      "shadows": "soft",
+      "background": "#9fb8cf",
+      "ao": { "on": false, "radius": 0.6, "thickness": 0.3, "falloff": 1, "scale": 1.2, "intensity": 0.8, "samples": 16 },
+      "bloom": { "strength": 0.25, "radius": 0.4, "threshold": 2 }
+    },
+    "environment3d": {
+      "sun": {
+        "at": [14, 24, -10], "color": "#fff3df", "power": 2.6,
+        "shadow": { "map": 2048, "half": 28, "near": 1, "far": 140, "distance": 60, "bias": -0.0004, "normalBias": 0.03 }
+      },
+      "sky": { "color": "#cfe0f2", "ground": "#5a5048", "power": 0.9 },
+      "ambient": { "color": "#ffffff", "power": 0.15 }
+    },
+    "box3d": {},
+    "arena": {},
+    "start": { "slot": 0, "pos": [0, 4, -17], "yaw": 0, "pitch": 0.22 },
+    "player": {
+      "seat": 0,
+      "stood": false,
+      "pos": [0, 0, 0],
+      "look": { "yaw": 0, "pitch": 0, "dist": 0.1 },
+      "lift": 0,
+      "stick": [0, 0],
+      "up": false,
+      "down": false,
+      "fast": false,
+      "pace": 1
+    },
+    "blast": { "pos": [0, 0, 0], "age": 0 },
+    "pad": { "pos": [0, 0, 0], "rot": [0, 0, 0, 1], "vel": [0, 0, 0], "spin": [0, 0, 0], "awake": true },
+    "box": { "pos": [0, 0, 0], "rot": [0, 0, 0, 1], "vel": [0, 0, 0], "spin": [0, 0, 0], "awake": true },
+    "sphere": { "pos": [0, 0, 0], "rot": [0, 0, 0, 1], "vel": [0, 0, 0], "spin": [0, 0, 0], "awake": true },
+    "capsule": { "pos": [0, 0, 0], "rot": [0, 0, 0, 1], "vel": [0, 0, 0], "spin": [0, 0, 0], "awake": true },
+    "hull": { "pos": [0, 0, 0], "rot": [0, 0, 0, 1], "vel": [0, 0, 0], "spin": [0, 0, 0], "awake": true },
+    "cylinder": { "pos": [0, 0, 0], "rot": [0, 0, 0, 1], "vel": [0, 0, 0], "spin": [0, 0, 0], "awake": true },
+    "cone": { "pos": [0, 0, 0], "rot": [0, 0, 0, 1], "vel": [0, 0, 0], "spin": [0, 0, 0], "awake": true },
+    "rock": { "pos": [0, 0, 0], "rot": [0, 0, 0, 1], "vel": [0, 0, 0], "spin": [0, 0, 0], "awake": true },
+    "crate": { "pos": [0, 0, 0], "rot": [0, 0, 0, 1], "vel": [0, 0, 0], "spin": [0, 0, 0], "awake": true },
+    "barrel": { "pos": [0, 0, 0], "rot": [0, 0, 0, 1], "vel": [0, 0, 0], "spin": [0, 0, 0], "awake": true },
+    "ball": { "pos": [0, 0, 0], "rot": [0, 0, 0, 1], "vel": [0, 0, 0], "spin": [0, 0, 0], "awake": true },
+    "block": { "pos": [0, 0, 0], "rot": [0, 0, 0, 1], "vel": [0, 0, 0], "spin": [0, 0, 0], "awake": true },
+    "door": { "pos": [0, 0, 0], "rot": [0, 0, 0, 1], "vel": [0, 0, 0], "spin": [0, 0, 0], "awake": true },
+    "bob": { "pos": [0, 0, 0], "rot": [0, 0, 0, 1], "vel": [0, 0, 0], "spin": [0, 0, 0], "awake": true },
+    "plank": { "pos": [0, 0, 0], "rot": [0, 0, 0, 1], "vel": [0, 0, 0], "spin": [0, 0, 0], "awake": true },
+    "link": { "pos": [0, 0, 0], "rot": [0, 0, 0, 1], "vel": [0, 0, 0], "spin": [0, 0, 0], "awake": true },
+    "shot": { "pos": [0, 0, 0], "rot": [0, 0, 0, 1], "vel": [0, 0, 0], "spin": [0, 0, 0], "awake": true },
+    "hinge": { "a": 0, "b": 0, "ends": [0, 0] },
+    "rope": { "a": 0, "b": 0, "ends": [0, 0] },
+    "spring": { "a": 0, "b": 0, "ends": [0, 0] },
+    "weld": { "a": 0, "b": 0, "ends": [0, 0] }
+  },
+  "actors": [
+    { "is": "scenemanager" },
+    { "is": "loader" },
+    { "is": "box3d" },
+    { "is": "arena" },
+    { "is": "start", "slot": 0, "pos": [0, 4, -17], "yaw": 0, "pitch": 0.22 },
+
+    { "is": "box", "pos": [-15, 0.41, -8] },
+    { "is": "sphere", "pos": [-12, 0.46, -8] },
+    { "is": "capsule", "pos": [-9, 0.31, -8] },
+    { "is": "hull", "pos": [-6, 0.31, -8] },
+    { "is": "cylinder", "pos": [-3, 0.46, -8] },
+    { "is": "cone", "pos": [0, 0.01, -8] },
+    { "is": "rock", "pos": [3, 0.55, -8] },
+
+    { "is": "crate", "pos": [-8.82, 0.4, 1.18] },
+    { "is": "crate", "pos": [-8, 0.4, 1.18] },
+    { "is": "crate", "pos": [-7.18, 0.4, 1.18] },
+    { "is": "crate", "pos": [-8.82, 0.4, 2] },
+    { "is": "crate", "pos": [-8, 0.4, 2] },
+    { "is": "crate", "pos": [-7.18, 0.4, 2] },
+    { "is": "crate", "pos": [-8.82, 0.4, 2.82] },
+    { "is": "crate", "pos": [-8, 0.4, 2.82] },
+    { "is": "crate", "pos": [-7.18, 0.4, 2.82] },
+    { "is": "crate", "pos": [-8.41, 1.21, 1.59] },
+    { "is": "crate", "pos": [-7.59, 1.21, 1.59] },
+    { "is": "crate", "pos": [-8.41, 1.21, 2.41] },
+    { "is": "crate", "pos": [-7.59, 1.21, 2.41] },
+    { "is": "crate", "pos": [-8, 2.02, 2] },
+
+    { "is": "barrel", "pos": [-3.72, 0.5, 6] },
+    { "is": "barrel", "pos": [-3, 0.5, 6] },
+    { "is": "barrel", "pos": [-2.28, 0.5, 6] },
+    { "is": "barrel", "pos": [-3.36, 1.51, 6] },
+    { "is": "barrel", "pos": [-2.64, 1.51, 6] },
+    { "is": "barrel", "pos": [-3, 2.52, 6] },
+
+    { "is": "ball", "pos": [7.2, 2.5, 9] },
+    { "is": "ball", "pos": [8, 2.5, 9] },
+    { "is": "ball", "pos": [8.8, 2.5, 9] },
+    { "is": "ball", "pos": [7.6, 2.3, 8.1] },
+    { "is": "ball", "pos": [8.4, 2.3, 8.1] },
+
+    { "is": "pad", "pos": [8, 0.05, 0.3] },
+
+    { "is": "block", "pos": [0, 0.2, 9.68] },
+    { "is": "block", "pos": [0, 0.2, 10.32] },
+    { "is": "block", "pos": [-0.32, 0.6, 10], "rot": [0, 0.70710678, 0, 0.70710678] },
+    { "is": "block", "pos": [0.32, 0.6, 10], "rot": [0, 0.70710678, 0, 0.70710678] },
+    { "is": "block", "pos": [0, 1, 9.68] },
+    { "is": "block", "pos": [0, 1, 10.32] },
+    { "is": "block", "pos": [-0.32, 1.4, 10], "rot": [0, 0.70710678, 0, 0.70710678] },
+    { "is": "block", "pos": [0.32, 1.4, 10], "rot": [0, 0.70710678, 0, 0.70710678] },
+    { "is": "block", "pos": [0, 1.8, 9.68] },
+    { "is": "block", "pos": [0, 1.8, 10.32] },
+    { "is": "block", "pos": [-0.32, 2.2, 10], "rot": [0, 0.70710678, 0, 0.70710678] },
+    { "is": "block", "pos": [0.32, 2.2, 10], "rot": [0, 0.70710678, 0, 0.70710678] },
+    { "is": "block", "pos": [0, 2.6, 9.68] },
+    { "is": "block", "pos": [0, 2.6, 10.32] },
+    { "is": "block", "pos": [-0.32, 3, 10], "rot": [0, 0.70710678, 0, 0.70710678] },
+    { "is": "block", "pos": [0.32, 3, 10], "rot": [0, 0.70710678, 0, 0.70710678] },
+
+    { "is": "crate", "pos": [-12, 2.93, 10] },
+
+    { "is": "door", "pos": [12.87, 1.15, 12], "name": "door" },
+    { "is": "hinge", "ends": [-6, ["door", "door"]] },
+
+    { "is": "bob", "pos": [13.3, 2.772, 2.298], "name": "bob" },
+    { "is": "rope", "ends": [-8, ["bob", "bob"]] },
+
+    { "is": "plank", "pos": [-14, 1.55, -2], "name": "plank" },
+    { "is": "spring", "ends": [-9, ["plank", "plank"]] },
+
+    { "is": "link", "pos": [-15.38, 2.7, -10], "name": "link 1" },
+    { "is": "link", "pos": [-14.56, 2.7, -10], "name": "link 2" },
+    { "is": "link", "pos": [-13.74, 2.7, -10], "name": "link 3" },
+    { "is": "link", "pos": [-12.92, 2.7, -10], "name": "link 4" },
+    { "is": "link", "pos": [-12.1, 2.7, -10], "name": "link 5" },
+    { "is": "weld", "ends": [-10, ["link", "link 1"]], "localFrameA": { "pos": [0.21, 1.2, 0], "rot": [0, 0, 0, 1] } },
+    { "is": "weld", "ends": [["link", "link 1"], ["link", "link 2"]] },
+    { "is": "weld", "ends": [["link", "link 2"], ["link", "link 3"]] },
+    { "is": "weld", "ends": [["link", "link 3"], ["link", "link 4"]] },
+    { "is": "weld", "ends": [["link", "link 4"], ["link", "link 5"]] }
+  ]
+}

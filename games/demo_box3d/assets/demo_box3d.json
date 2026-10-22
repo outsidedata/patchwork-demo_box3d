@@ -1,0 +1,73 @@
+{
+  "player": {
+    "speed": 8,
+    "boost": 4,
+    "climb": 6,
+    "clear": 0.5,
+    "ceiling": 60,
+    "pace": { "min": 0.1, "max": 10, "step": 0.0015 },
+    "camera": { "minPitch": -1.5, "maxPitch": 1.5 },
+    "sens": 0.0025,
+    "fire": { "speed": 28, "muzzle": 1 },
+    "keys": {
+      "stick": ["a", "d", "w", "s"],
+      "up": [" "],
+      "down": ["c"],
+      "fast": ["Shift"],
+      "drag": "Mouse2",
+      "fire": "f",
+      "blast": "x"
+    }
+  },
+  "blast": {
+    "radius": 6,
+    "falloff": 2,
+    "impulse": 900,
+    "reach": 60,
+    "life": 0.45,
+    "colour": "#ffb347",
+    "glow": 3,
+    "opacity": 0.55,
+    "segments": 32
+  },
+  "arena": {
+    "paint": [
+      "#7d8790",
+      "#5d6670",
+      "#5d6670",
+      "#5d6670",
+      "#5d6670",
+      "#3e4650",
+      "#3e4650",
+      "#3e4650",
+      "#3e4650",
+      "#3e4650",
+      "#c9a25e",
+      "#4f8fbf"
+    ],
+    "roughness": 0.85,
+    "metalness": 0,
+    "grid": { "size": 40, "cells": 40, "colour": "#69737d", "lift": 0.004 }
+  },
+  "pad": { "colour": "#2c3e33", "lit": "#5cff8a", "glow": 4, "roughness": 0.6, "metalness": 0 },
+  "box": { "colour": "#e0533d", "roughness": 0.55, "metalness": 0 },
+  "sphere": { "colour": "#f0a530", "roughness": 0.35, "metalness": 0 },
+  "capsule": { "colour": "#e8d44d", "roughness": 0.45, "metalness": 0 },
+  "hull": { "colour": "#6cc070", "roughness": 0.4, "metalness": 0 },
+  "cylinder": { "colour": "#3fb6c6", "roughness": 0.4, "metalness": 0.2 },
+  "cone": { "colour": "#5a7be0", "roughness": 0.45, "metalness": 0 },
+  "rock": { "colour": "#8a8178", "roughness": 0.95, "metalness": 0 },
+  "crate": { "colour": "#b07a43", "roughness": 0.8, "metalness": 0 },
+  "barrel": { "colour": "#b8382f", "roughness": 0.5, "metalness": 0.35 },
+  "ball": { "colour": "#f2f2ea", "roughness": 0.3, "metalness": 0 },
+  "block": { "colour": "#d9c49a", "roughness": 0.7, "metalness": 0 },
+  "door": { "colour": "#7a4f2e", "roughness": 0.7, "metalness": 0 },
+  "bob": { "colour": "#c7ccd1", "roughness": 0.3, "metalness": 0.2 },
+  "plank": { "colour": "#a56d3b", "roughness": 0.75, "metalness": 0 },
+  "link": { "colour": "#9aa3ad", "roughness": 0.35, "metalness": 0.2 },
+  "shot": { "colour": "#ff5fa2", "roughness": 0.3, "metalness": 0, "lost": -20 },
+  "hinge": { "above": 1.5, "panel": "readings", "style": "reading" },
+  "rope": { "above": 0.8, "panel": "readings", "style": "reading" },
+  "spring": { "above": 0.7, "panel": "readings", "style": "reading" },
+  "weld": { "above": 0.45, "panel": "readings", "style": "reading" }
+}
