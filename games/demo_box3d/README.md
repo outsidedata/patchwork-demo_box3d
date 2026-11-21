@@ -4,8 +4,9 @@ box3d's rigid bodies in a walled arena lit by environment3d: a crate pile, a bar
 tower and balls rolling down a ramp to knock over; one body of every shape (box, sphere, capsule,
 hull, cylinder, cone, rock); a door on a revolute hinge, a pendulum on a distance joint, a plank on a
 sprung wheel joint and a welded chain, each with its joint readings over it; a one-way platform and
-a pad that lights while something is in it. The world is `world.box3d` in `main.scene.json`, and the
-kinds' numbers are in `assets/demo_box3d.json`.
+a pad that lights while something is in it. The world is `world.box3d` in `main.scene.json`, the
+bodies' paint is `world.instances3d.kinds` there, and the kinds' other numbers are in
+`assets/demo_box3d.json`.
 
 ## Playing it
 
@@ -27,4 +28,6 @@ Every key and number of the eye is in `assets/demo_box3d.json`.
 
 ## The art
 
-None: every shape is drawn from its collision shape, so there is nothing to bake.
+None: every shape is drawn from its collision shape, so there is nothing to bake. Every moving body
+is one instance of its kind, drawn by instances3d (`world.instances3d.kinds`, each kind's paint), so
+the fifteen crates are one draw call.

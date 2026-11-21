@@ -1,7 +1,9 @@
-// The browser half of the game's bodies plugin: how every body of the demo is drawn, and how a joint
-// shows what it measures. It has no row and no numbers of its own: a look hands it a body's Box3D
-// shapes, which the look reads off the scene's `world.box3d` (a kind's `shapes`, or a static's), and
-// the paint of its kind's definition in `assets/demo_box3d.json`. The server half is `bodies.sim.ts`.
+// The browser half of the game's bodies plugin: how the arena's statics and the sensor pad are drawn, and
+// how a joint shows what it measures. Every moving body is drawn by instances3d, from
+// `world.instances3d.kinds` and box3d's mod for it. It has no row and no numbers of its own: a look hands
+// it a body's Box3D shapes, which the look reads off the scene's `world.box3d` (a kind's `shapes`, or a
+// static's), and the paint of its kind's definition in `assets/demo_box3d.json`. The server half is
+// `bodies.sim.ts`.
 //
 // `build(plugins, shapes, paint)` makes one three.js group of a mesh per shape, each shape drawn as
 // Box3D holds it: a box as a box of its half extents, a sphere and a capsule as themselves, and a

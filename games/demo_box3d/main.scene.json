@@ -7,6 +7,27 @@
       }
     },
     "shipped": { "plugins": ["bodies"] },
+    "instances3d": {
+      "mods": { "instances": ["box3d"], "behaviors": ["box3d"] },
+      "kinds": {
+        "box": { "body": {}, "colour": "#e0533d", "roughness": 0.55, "metalness": 0, "lods": [0], "shadow": 1, "leaf": 0 },
+        "sphere": { "body": {}, "colour": "#f0a530", "roughness": 0.35, "metalness": 0, "lods": [0], "shadow": 1, "leaf": 0 },
+        "capsule": { "body": {}, "colour": "#e8d44d", "roughness": 0.45, "metalness": 0, "lods": [0], "shadow": 1, "leaf": 0 },
+        "hull": { "body": {}, "colour": "#6cc070", "roughness": 0.4, "metalness": 0, "lods": [0], "shadow": 1, "leaf": 0 },
+        "cylinder": { "body": {}, "colour": "#3fb6c6", "roughness": 0.4, "metalness": 0.2, "lods": [0], "shadow": 1, "leaf": 0 },
+        "cone": { "body": {}, "colour": "#5a7be0", "roughness": 0.45, "metalness": 0, "lods": [0], "shadow": 1, "leaf": 0 },
+        "rock": { "body": {}, "colour": "#8a8178", "roughness": 0.95, "metalness": 0, "lods": [0], "shadow": 1, "leaf": 0 },
+        "crate": { "body": {}, "colour": "#b07a43", "roughness": 0.8, "metalness": 0, "lods": [0], "shadow": 1, "leaf": 0 },
+        "barrel": { "body": {}, "colour": "#b8382f", "roughness": 0.5, "metalness": 0.35, "lods": [0], "shadow": 1, "leaf": 0 },
+        "ball": { "body": {}, "colour": "#f2f2ea", "roughness": 0.3, "metalness": 0, "lods": [0], "shadow": 1, "leaf": 0 },
+        "block": { "body": {}, "colour": "#d9c49a", "roughness": 0.7, "metalness": 0, "lods": [0], "shadow": 1, "leaf": 0 },
+        "door": { "body": {}, "colour": "#7a4f2e", "roughness": 0.7, "metalness": 0, "lods": [0], "shadow": 1, "leaf": 0 },
+        "bob": { "body": {}, "colour": "#c7ccd1", "roughness": 0.3, "metalness": 0.2, "lods": [0], "shadow": 1, "leaf": 0 },
+        "plank": { "body": {}, "colour": "#a56d3b", "roughness": 0.75, "metalness": 0, "lods": [0], "shadow": 1, "leaf": 0 },
+        "link": { "body": {}, "colour": "#9aa3ad", "roughness": 0.35, "metalness": 0.2, "lods": [0], "shadow": 1, "leaf": 0 },
+        "shot": { "body": {}, "colour": "#ff5fa2", "roughness": 0.3, "metalness": 0, "lods": [0], "shadow": 1, "leaf": 0 }
+      }
+    },
     "ui": {
       "panels": {
         "readings": { "anchor": "top-left", "at": [0, 0], "size": [1280, 720], "layer": 0 }
@@ -98,7 +119,7 @@
       }
     }
   },
-  "plugins": ["loader", "scenemanager", "player", "box3d", "shipped", "environment3d", "render3d", "chasecamera3d", "ui", "stats"],
+  "plugins": ["loader", "scenemanager", "player", "box3d", "shipped", "instances3d", "environment3d", "render3d", "chasecamera3d", "ui", "stats"],
   "seats": 1,
   "prefabs": {
     "engine": { "dt": 0.016666666666666666, "width": 1280, "height": 720 },
